@@ -15,10 +15,6 @@ export default class MainWindow {
       reactive: true
     });
     
-    this.window.width = 1200;
-    this.window.height = 600;
-    this.window.visible = false;
-
     this.window.connect('key-press-event', (object, event) => {
       let code = event.get_key_code();
       let state = event.get_state();
@@ -32,10 +28,16 @@ export default class MainWindow {
       return false;
     });
 
+    this.window.visible = false;
+
     Main.layoutManager.addChrome(this.window, {affectsInputRegion: true});
 
     // Position the window in the center of the screen
     let monitor = Main.layoutManager.primaryMonitor;
+
+    this.window.width = monitor.width * 0.70;
+    this.window.height = monitor.height * 0.70;
+    
     this.window.set_position(
         monitor.x + Math.floor(monitor.width / 2 - this.window.width / 2),
         monitor.y + Math.floor(monitor.height / 2 - this.window.height / 2)
@@ -46,13 +48,13 @@ export default class MainWindow {
 
   _addInputRow() {
     this.inputRow = new St.BoxLayout({
-      style_class: 'input-container',
+      style_class: 'input-row',
       vertical: false,
       x_expand: true
     });
 
     this.input = new St.Entry({
-      style_class: 'question-input',
+      style_class: 'assistant-input',
       can_focus: true,
       hint_text: 'Give a task to the AI Assistant',
       track_hover: true,
@@ -62,7 +64,7 @@ export default class MainWindow {
     this.inputRow.add(this.input);
 
     this.sendButton = new St.Icon({
-      icon_name: "object-select-symbolic",
+      icon_name: "audio-input-microphone-symbolic",
       icon_size: 30
     });
 
