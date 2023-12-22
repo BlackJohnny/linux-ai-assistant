@@ -8,7 +8,7 @@ DOMAIN   := blackjohnny-gmail.com
 ZIP_NAME := $(NAME)@$(DOMAIN).zip
 
 # Some of the recipes below depend on some of these files.
-JS_FILES       = $(wildcard src/*.js src/*/*.js extension.js)
+JS_FILES       = $(wildcard src/*.js src/*/*.js extension.js stylesheet.css)
 UI_FILES       = $(shell find resources -type f -and \( -name "*.ui" \))
 RESOURCE_FILES = $(shell find resources -mindepth 2 -type f)
 LOCALES_PO     = $(wildcard po/*.po)
