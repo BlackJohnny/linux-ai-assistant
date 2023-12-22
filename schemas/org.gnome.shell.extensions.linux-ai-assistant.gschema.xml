@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.linux-ai-assistant" path="/org/gnome/shell/extensions/linux-ai-assistant/">
+      <key name="show-linux-ai-assistant-interface" type="as">
+          <default><![CDATA[['<Super>slash']]]></default>
+          <summary>Hotkey to open the Linux AI Assitant interface.</summary>
+      </key>
+  </schema>
+</schemalist>

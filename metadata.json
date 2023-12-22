@@ -1,0 +1,8 @@
+{
+  "name": "Linux AI Assistant",
+  "description": "This assistant helps you with various tasks on you Linux machine.",
+  "uuid": "linux-ai-assistant@blackjohnny-gmail.com",
+  "shell-version": [
+    "45"
+  ]
+}
